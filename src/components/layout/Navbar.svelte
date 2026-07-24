@@ -44,8 +44,7 @@
 
 	$effect(() => {
 		// Detect initial dark mode
-		isDark = document.documentElement.classList.contains('dark') || 
-			localStorage.getItem('theme') === 'dark';
+		isDark = localStorage.getItem('theme') === 'dark';
 		if (isDark) {
 			document.documentElement.classList.add('dark');
 		} else {
