@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+	--font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	
+	/* Humanist Warm Light Theme Colors */
+	--bg-primary: #faf8f6;
+	--bg-secondary: #ffffff;
+	--bg-tertiary: #f4efeb;
+	
+	--text-primary: #1c1917;
+	--text-secondary: #625c58;
+	--text-tertiary: #8b837e;
+	
+	--border-color: #ede8e4;
+	--border-hover: #dcd3cc;
+	
+	--primary: #7c3aed;
+	--primary-hover: #6d28d9;
+	--primary-light: #f5f3ff;
+	
+	--success: #10b981;
+	--error: #ef4444;
+	--warning: #f59e0b;
+	
+	--shadow-sm: 0 2px 4px rgba(28, 25, 23, 0.02);
+	--shadow-md: 0 8px 24px rgba(28, 25, 23, 0.04);
+	--shadow-lg: 0 16px 36px rgba(28, 25, 23, 0.06);
+	
+	--radius-sm: 0.5rem;
+	--radius-md: 0.875rem;
+	--radius-lg: 1.25rem;
+	
+	--transition-fast: 0.15s ease;
+	--transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Tokens (Premium Neon Mint/Black Theme) */
+html.dark {
+	--bg-primary: #000000;
+	--bg-secondary: #0c0c0e;
+	--bg-tertiary: #1a1a1f;
+	
+	--text-primary: #ffffff;
+	--text-secondary: #a3a3a8;
+	--text-tertiary: #6b6b72;
+	
+	--border-color: #1a1a1f;
+	--border-hover: #2ee59d;
+	
+	--primary: #2ee59d;
+	--primary-hover: #3bf2f2;
+	--primary-light: rgba(46, 229, 157, 0.1);
+	
+	--success: #2ee59d;
+	--error: #f87171;
+	--warning: #fbbf24;
+	
+	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.8);
+	--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.6), 0 2px 4px -2px rgb(0 0 0 / 0.6);
+	--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.8), 0 4px 6px -4px rgb(0 0 0 / 0.8);
+	
+	/* Brand Gradient (Mint to Lime-Yellow) */
+	--brand-gradient: linear-gradient(135deg, #2ee59d 0%, #b5f6a9 100%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--font-sans);
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	transition: background-color var(--transition-normal), color var(--transition-normal);
+	overflow-x: hidden;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+}
+
+/* Grid & Utilities */
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.section-padding {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+/* Simple Solid Card Panel */
+.glass {
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-color);
+	box-shadow: var(--shadow-sm);
+	border-radius: var(--radius-lg);
+	transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.glass:hover {
+	border-color: var(--border-hover);
+	box-shadow: var(--shadow-md);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+::-webkit-scrollbar-track {
+	background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--border-color);
+	border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--text-tertiary);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(8px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+	animation: fadeIn var(--transition-normal) forwards;
+}
+
+/* Premium Dark Mode Action Button Styles */
+html.dark .generate-btn,
+html.dark .add-btn,
+html.dark .home-btn,
+html.dark .view-all-btn {
+	background: var(--brand-gradient);
+	color: #000000 !important;
+	font-weight: 700;
+	border: none;
+	box-shadow: 0 0 10px rgba(46, 229, 157, 0.4);
+}
+html.dark .generate-btn:hover,
+html.dark .add-btn:hover,
+html.dark .home-btn:hover,
+html.dark .view-all-btn:hover {
+	opacity: 0.9;
+	transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 0 1.25rem;
+	}
+	.section-padding {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+	.seo-table {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+}
