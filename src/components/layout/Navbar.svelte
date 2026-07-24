@@ -259,12 +259,14 @@
 	.nav-links {
 		display: flex;
 		align-items: center;
-		gap: 1.5rem;
+		gap: 0.85rem;
 	}
 	.nav-link {
 		font-weight: 600;
-		font-size: 1.05rem;
+		font-size: 0.95rem;
 		color: var(--text-secondary);
+		white-space: nowrap;
+		transition: color var(--transition-fast);
 	}
 	.nav-link:hover {
 		color: var(--primary);
@@ -319,12 +321,15 @@
 		cursor: pointer;
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 1150px) {
 		.nav-search {
-			width: 200px;
+			width: 180px;
+		}
+		.nav-links {
+			gap: 0.5rem;
 		}
 	}
-	@media (max-width: 768px) {
+	@media (max-width: 960px) {
 		.nav-links, .nav-search {
 			display: none;
 		}
