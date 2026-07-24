@@ -165,11 +165,11 @@ html.dark .view-all-btn:hover {
 
 @media (max-width: 768px) {
 	.container {
-		padding: 0 1.25rem;
+		padding: 0 1rem;
 	}
 	.section-padding {
-		padding-top: 2rem;
-		padding-bottom: 2rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 	.seo-table {
 		display: block;
@@ -177,4 +177,24 @@ html.dark .view-all-btn:hover {
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 	}
+	.inputs-panel,
+	.results-panel,
+	.summary-card,
+	.doc-section,
+	.faq-section,
+	.seo-section,
+	.why-calchub-section {
+		padding: 1.25rem !important;
+	}
 }
+
+.calculator-grid {
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+}
+@media (max-width: 768px) {
+	.calculator-grid {
+		grid-template-columns: minmax(0, 1fr) !important;
+		gap: 1.25rem !important;
+	}
+}
+

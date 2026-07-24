@@ -292,7 +292,7 @@
 <style>
 	.layout-columns {
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
 		gap: 2rem;
 		align-items: start;
 	}
@@ -319,6 +319,7 @@
 		color: var(--text-secondary);
 		transition: transform var(--transition-fast), color var(--transition-fast);
 		border-radius: 50%;
+		flex-shrink: 0;
 	}
 	.favorite-btn:hover {
 		color: var(--error);
@@ -422,7 +423,7 @@
 
 	@media (max-width: 900px) {
 		.layout-columns {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 		}
 		.side-column {
 			display: none;
